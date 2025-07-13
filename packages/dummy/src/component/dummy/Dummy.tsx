@@ -1,7 +1,7 @@
 export type DummyProps = {
-    dummyText: string;
+  dummyText: string;
 };
 
 export function Dummy({ dummyText }: DummyProps) {
-    return <div>{`Your dummy text ${dummyText}`}</div>;
+  return <div>{`Your dummy text ${dummyText}`}</div>;
 }
