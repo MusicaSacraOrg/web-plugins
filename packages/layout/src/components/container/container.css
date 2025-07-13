@@ -1,0 +1,12 @@
+.musica-sacra-container {
+    --max-width: 1200px;
+
+    margin: 0 auto;
+    max-width: var(--max-width);
+
+    position: relative;
+
+    &.musica-sacra-container--page-container {
+        min-height: 100vh;
+    }
+}

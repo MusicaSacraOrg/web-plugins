@@ -1,0 +1,106 @@
+.musica-sacra-layout-with-sidebar {
+    --max-width: 1200px;
+
+    --sidebar-ration: 1;
+    --content-ration: 3;
+    --total-ration: 4;
+
+    --sidebar-min-width: calc(var(--max-width) / var(--total-ration) * var(--sidebar-ration));
+    --content-min-width: calc(var(--max-width) / var(--total-ration) * var(--content-ration));
+
+    display: flex;
+
+    @media(max-width: 1200px) {
+        /* Change to @custom-media when released */
+        flex-direction: column;
+    }
+
+    &.musica-sacra-layout-with-sidebar--page-layout {
+        min-height: 100vh;
+    }
+
+    .musica-sacra-layout-with-sidebar__sidebar-expand {
+        display: none;
+        width: 100%;
+        padding: 1rem;
+        background-color: rgb(246, 246, 247);
+
+        @media(max-width: 1200px) {
+            display: block;
+        }
+    }
+
+    .musica-sacra-layout-with-sidebar__overlay {
+        z-index: -1;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        opacity: 0;
+        cursor: pointer;
+
+        &.musica-sacra-layout-with-sidebar__overlay--active {
+            opacity: 1;
+            z-index: 9;
+        }
+    }
+
+    .musica-sacra-layout-with-sidebar__sidebar {
+        background-color: rgb(246, 246, 247);
+        width: calc((100% - (var(--max-width) - 64px)) / 2 + var(--sidebar-min-width) - 32px);
+        min-width: var(--sidebar-min-width);
+        height: auto;
+        z-index: 10;
+
+        @media(max-width: 1200px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            transform: translateX(-100%);
+            width: 80%;
+            /* or var(--sidebar-min-width) if preferred */
+            max-width: 300px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        &.musica-sacra-layout-with-sidebar__sidebar--expanded {
+            @media (max-width: 1200px) {
+                transform: translateX(0);
+            }
+        }
+
+        .musica-sacra-layout-with-sidebar__sidebar-inner {
+            width: var(--sidebar-min-width);
+            margin-right: 0;
+            margin-left: auto;
+            padding: 1rem;
+
+            @media(max-width: 1200px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .musica-sacra-layout-with-sidebar__content {
+        width: calc((100% - (var(--max-width) - 64px)) / 2 + var(--content-min-width) - 32px);
+        min-width: var(--content-min-width);
+        height: auto;
+
+        @media(max-width: 1200px) {
+            width: 100%;
+            min-width: auto;
+        }
+
+        .musica-sacra-layout-with-sidebar__content-inner {
+            width: var(--content-min-width);
+            margin-left: 0;
+            margin-right: auto;
+            padding: 1rem;
+
+            @media(max-width: 1200px) {
+                width: 100%;
+            }
+        }
+    }
+}
