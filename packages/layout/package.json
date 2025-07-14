@@ -1,6 +1,6 @@
 {
-  "name": "@quarks-js/layout",
-  "version": "1.0.13",
+  "name": "@musica-sacra/layout",
+  "version": "0.0.0",
   "description": "Layout components for building easy web apps layouts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -15,9 +15,7 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "@quarks-js/ui": "1.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
