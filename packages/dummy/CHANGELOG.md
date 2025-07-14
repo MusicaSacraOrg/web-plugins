@@ -1,5 +1,11 @@
 # @musica-sacra/dummy
 
+## 0.0.3
+
+### Patch Changes
+
+- b21c866: Fix story title
+
 ## 0.0.2
 
 ### Patch Changes
