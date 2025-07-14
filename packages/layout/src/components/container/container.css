@@ -1,4 +1,4 @@
-.musica-sacra-container {
+.ms-container {
     --max-width: 1200px;
 
     margin: 0 auto;
@@ -6,7 +6,7 @@
 
     position: relative;
 
-    &.musica-sacra-container--page-container {
+    &.ms-container--page-container {
         min-height: 100vh;
     }
 }

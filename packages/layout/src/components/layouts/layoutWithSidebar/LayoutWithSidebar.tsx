@@ -28,32 +28,28 @@ export function LayoutWithSidebar({
 
     return (
         <div
-            className={`musica-sacra-layout-with-sidebar ${isPageLayout ? 'musica-sacra-layout-with-sidebar--page-layout' : ''} ${className}`}
+            className={`ms-layout-with-sidebar ${isPageLayout ? 'ms-layout-with-sidebar--page-layout' : ''} ${className}`}
             style={style}
         >
-            <div className={'musica-sacra-layout-with-sidebar__sidebar-expand'}>
+            <div className={'ms-layout-with-sidebar__sidebar-expand'}>
                 <a onClick={toggleSidebar}>{'>>'}</a>
             </div>
             {isSidebarExpanded && (
                 <div
-                    className={`musica-sacra-layout-with-sidebar__overlay ${isSidebarExpanded ? 'musica-sacra-layout-with-sidebar__overlay--active' : ''}`}
+                    className={`ms-layout-with-sidebar__overlay ${isSidebarExpanded ? 'ms-layout-with-sidebar__overlay--active' : ''}`}
                     onClick={toggleSidebar}
                 />
             )}
 
             <div
-                className={`musica-sacra-layout-with-sidebar__sidebar ${isSidebarExpanded ? 'musica-sacra-layout-with-sidebar__sidebar--expanded' : ''}`}
+                className={`ms-layout-with-sidebar__sidebar ${isSidebarExpanded ? 'ms-layout-with-sidebar__sidebar--expanded' : ''}`}
             >
-                <div
-                    className={`musica-sacra-layout-with-sidebar__sidebar-inner`}
-                >
+                <div className={`ms-layout-with-sidebar__sidebar-inner`}>
                     {sidebar}
                 </div>
             </div>
-            <div className={'musica-sacra-layout-with-sidebar__content'}>
-                <div
-                    className={`musica-sacra-layout-with-sidebar__content-inner`}
-                >
+            <div className={'ms-layout-with-sidebar__content'}>
+                <div className={`ms-layout-with-sidebar__content-inner`}>
                     {content}
                 </div>
             </div>

@@ -1,4 +1,4 @@
-.musica-sacra-layout-with-sidebar {
+.ms-layout-with-sidebar {
     --max-width: 1200px;
 
     --sidebar-ration: 1;
@@ -15,11 +15,11 @@
         flex-direction: column;
     }
 
-    &.musica-sacra-layout-with-sidebar--page-layout {
+    &.ms-layout-with-sidebar--page-layout {
         min-height: 100vh;
     }
 
-    .musica-sacra-layout-with-sidebar__sidebar-expand {
+    .ms-layout-with-sidebar__sidebar-expand {
         display: none;
         width: 100%;
         padding: 1rem;
@@ -30,7 +30,7 @@
         }
     }
 
-    .musica-sacra-layout-with-sidebar__overlay {
+    .ms-layout-with-sidebar__overlay {
         z-index: -1;
         position: fixed;
         inset: 0;
@@ -39,13 +39,13 @@
         opacity: 0;
         cursor: pointer;
 
-        &.musica-sacra-layout-with-sidebar__overlay--active {
+        &.ms-layout-with-sidebar__overlay--active {
             opacity: 1;
             z-index: 9;
         }
     }
 
-    .musica-sacra-layout-with-sidebar__sidebar {
+    .ms-layout-with-sidebar__sidebar {
         background-color: rgb(246, 246, 247);
         width: calc((100% - (var(--max-width) - 64px)) / 2 + var(--sidebar-min-width) - 32px);
         min-width: var(--sidebar-min-width);
@@ -64,13 +64,13 @@
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        &.musica-sacra-layout-with-sidebar__sidebar--expanded {
+        &.ms-layout-with-sidebar__sidebar--expanded {
             @media (max-width: 1200px) {
                 transform: translateX(0);
             }
         }
 
-        .musica-sacra-layout-with-sidebar__sidebar-inner {
+        .ms-layout-with-sidebar__sidebar-inner {
             width: var(--sidebar-min-width);
             margin-right: 0;
             margin-left: auto;
@@ -82,7 +82,7 @@
         }
     }
 
-    .musica-sacra-layout-with-sidebar__content {
+    .ms-layout-with-sidebar__content {
         width: calc((100% - (var(--max-width) - 64px)) / 2 + var(--content-min-width) - 32px);
         min-width: var(--content-min-width);
         height: auto;
@@ -92,7 +92,7 @@
             min-width: auto;
         }
 
-        .musica-sacra-layout-with-sidebar__content-inner {
+        .ms-layout-with-sidebar__content-inner {
             width: var(--content-min-width);
             margin-left: 0;
             margin-right: auto;

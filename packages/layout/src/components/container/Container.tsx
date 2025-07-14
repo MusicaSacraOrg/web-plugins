@@ -20,7 +20,7 @@ export function Container({
 
     return (
         <div
-            className={`musica-sacra-container ${isPageContainer ? 'musica-sacra-container--page-container' : ''} ${className}`}
+            className={`ms-container ${isPageContainer ? 'ms-container--page-container' : ''} ${className}`}
             style={style}
         >
             {children}

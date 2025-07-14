@@ -1,4 +1,4 @@
-import { Container } from '../../components/container/Container';
+import { Container } from '../../container/Container';
 import React from 'react';
 import './layoutBasic.css';
 
@@ -17,7 +17,7 @@ export function LayoutBasic({
 }: LayoutBasicProps) {
     return (
         <div
-            className={`musica-sacra-layout-basic ${isPageLayout ? 'musica-sacra-layout-basic--page-layout' : ''} ${className} `}
+            className={`ms-layout-basic ${isPageLayout ? 'ms-layout-basic--page-layout' : ''} ${className} `}
         >
             <Container
                 maxWidth={
