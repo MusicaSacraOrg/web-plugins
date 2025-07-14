@@ -18,6 +18,6 @@ runs:
         node-version: ${{ inputs.node-version }}
         cache: 'npm'
 
-    - name: 📦 Install dependencies
+    - name: Install dependencies
       run: npm install
       shell: bash
