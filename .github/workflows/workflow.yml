@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔧 Setup Node.js Environment
+      - name: Setup
         uses: ./.github/actions/setup-node
         with:
           node-version: 20
@@ -26,10 +26,10 @@ jobs:
     needs: lint
 
     steps:
-      - name: 🔧 Setup Node.js Environment
+      - name: Setup
         uses: ./.github/actions/setup-node
         with:
           node-version: 24
 
-      - name: 🛠️ Build all packages
+      - name: Build
         run: npm run build
