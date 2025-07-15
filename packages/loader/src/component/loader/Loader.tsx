@@ -18,7 +18,7 @@ export const Loader: React.FC<LoaderProps> = ({
     return (
         <div>
             {loading ? (
-                <div className="ms-loader" style={style}></div>
+                <div className={'ms-loader'} style={style}></div>
             ) : (
                 children
             )}
