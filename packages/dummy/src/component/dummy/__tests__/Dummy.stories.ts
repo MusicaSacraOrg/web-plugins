@@ -1,12 +1,12 @@
-import { Dummy } from "../Dummy";
-import { StoryObj } from "@storybook/react";
+import { Dummy } from '../Dummy';
+import { StoryObj } from '@storybook/react';
 
 const meta = {
-  title: "dummy/Dummy",
-  component: Dummy,
-  args: {
-    dummyText: "Dummy text",
-  },
+    title: 'dummy/Dummy',
+    component: Dummy,
+    args: {
+        dummyText: 'Dummy text',
+    },
 };
 
 export default meta;
