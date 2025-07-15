@@ -1,5 +1,5 @@
 import React from 'react';
-import './loader.scss';
+
 export interface LoaderProps {
     loading?: boolean;
     color?: string;
