@@ -1,0 +1,26 @@
+.ms-loader {
+  $color: #58c4dc;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0;
+
+  width: 2rem;
+  padding: 0.3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: $color;
+  $_m:
+    conic-gradient(transparent 10%, $color),
+    linear-gradient($color 0 0) content-box;
+  -webkit-mask: $_m;
+  mask: $_m;
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
