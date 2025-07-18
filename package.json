@@ -12,7 +12,7 @@
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint:fix --workspaces",
     "changeset": "changeset add",
-    "release": "changeset version && npm run build && changeset publish",
+    "release": "changeset version && npm run build && changeset publish && git push && git push --tags",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "clean": "npm run clean --workspaces"
