@@ -1,0 +1,62 @@
+import { useMemo } from 'react';
+
+type UseBemProps = {
+    base: string;
+};
+
+export function useBem({ base }: UseBemProps) {
+    return useMemo(() => {
+        // ToDo Will return scrambled classname
+        const bem = (name?: string | Record<string, boolean>) => {
+            if (typeof name === 'string') {
+                return `${base}__${name}`;
+            }
+
+            if (typeof name === 'object') {
+                return Object.entries(name)
+                    .filter(([, value]) => value)
+                    .map(([key]) => `${base}__${key}`)
+                    .join(' ');
+            }
+
+            return base;
+        };
+
+        // ToDo Looks unnecesery, but later will return unscrambled className
+        const element = (element: string | Record<string, boolean>) => {
+            if (typeof element === 'string') {
+                return `${base}__${element}`;
+            }
+
+            if (typeof element === 'object') {
+                return Object.entries(element)
+                    .filter(([, value]) => value)
+                    .map(([key]) => `${base}__${key}`)
+                    .join(' ');
+            }
+
+            return base;
+        };
+
+        const modifier = (modifier: string | Record<string, boolean>) => {
+            if (typeof modifier === 'string') {
+                return `${base}--${modifier}`;
+            }
+
+            if (typeof modifier === 'object') {
+                return Object.entries(modifier)
+                    .filter(([, value]) => value)
+                    .map(([key]) => `${base}--${key}`)
+                    .join(' ');
+            }
+
+            return '';
+        };
+
+        return {
+            bem,
+            element,
+            modifier,
+        };
+    }, [base]);
+}

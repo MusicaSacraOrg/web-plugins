@@ -1,5 +1,5 @@
 {
-  "name": "@musica-sacra/dummy",
+  "name": "@musica-sacra/hooks",
   "version": "0.0.3",
   "description": "Dummy react plugin",
   "main": "dist/index.js",
