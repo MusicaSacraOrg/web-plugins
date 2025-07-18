@@ -2,27 +2,12 @@ import React from 'react';
 
 export interface LoaderProps {
     loading?: boolean;
-    color?: string;
     children?: React.ReactNode;
 }
 
-export const Loader: React.FC<LoaderProps> = ({
-    loading = true,
-    color,
-    children,
-}) => {
-    const style: React.CSSProperties = color
-        ? ({ '--color': color } as React.CSSProperties)
-        : {};
-
+export const Loader: React.FC<LoaderProps> = ({ loading = true, children }) => {
     return (
-        <div>
-            {loading ? (
-                <div className={'ms-loader'} style={style}></div>
-            ) : (
-                children
-            )}
-        </div>
+        <div>{loading ? <div className={'ms-loader'}></div> : children}</div>
     );
 };
 
