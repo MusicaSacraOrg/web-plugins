@@ -1,62 +1,54 @@
-import { useMemo } from 'react';
+export function useBem(base: string) {
+    // ToDo Will return scrambled classname
+    const bem = (name?: string | Record<string, boolean>) => {
+        if (typeof name === 'string') {
+            return `${base}__${name}`;
+        }
 
-type UseBemProps = {
-    base: string;
-};
+        if (typeof name === 'object') {
+            return Object.entries(name)
+                .filter(([, value]) => value)
+                .map(([key]) => `${base}__${key}`)
+                .join(' ');
+        }
 
-export function useBem({ base }: UseBemProps) {
-    return useMemo(() => {
-        // ToDo Will return scrambled classname
-        const bem = (name?: string | Record<string, boolean>) => {
-            if (typeof name === 'string') {
-                return `${base}__${name}`;
-            }
+        return base;
+    };
 
-            if (typeof name === 'object') {
-                return Object.entries(name)
-                    .filter(([, value]) => value)
-                    .map(([key]) => `${base}__${key}`)
-                    .join(' ');
-            }
+    // ToDo Looks unnecesery, but later will return unscrambled className
+    const element = (element?: string | Record<string, boolean>) => {
+        if (typeof element === 'string') {
+            return `${base}__${element}`;
+        }
 
-            return base;
-        };
+        if (typeof element === 'object') {
+            return Object.entries(element)
+                .filter(([, value]) => value)
+                .map(([key]) => `${base}__${key}`)
+                .join(' ');
+        }
 
-        // ToDo Looks unnecesery, but later will return unscrambled className
-        const element = (element: string | Record<string, boolean>) => {
-            if (typeof element === 'string') {
-                return `${base}__${element}`;
-            }
+        return base;
+    };
 
-            if (typeof element === 'object') {
-                return Object.entries(element)
-                    .filter(([, value]) => value)
-                    .map(([key]) => `${base}__${key}`)
-                    .join(' ');
-            }
+    const modifier = (modifier: string | Record<string, boolean>) => {
+        if (typeof modifier === 'string') {
+            return `${base}--${modifier}`;
+        }
 
-            return base;
-        };
+        if (typeof modifier === 'object') {
+            return Object.entries(modifier)
+                .filter(([, value]) => value)
+                .map(([key]) => `${base}--${key}`)
+                .join(' ');
+        }
 
-        const modifier = (modifier: string | Record<string, boolean>) => {
-            if (typeof modifier === 'string') {
-                return `${base}--${modifier}`;
-            }
+        return '';
+    };
 
-            if (typeof modifier === 'object') {
-                return Object.entries(modifier)
-                    .filter(([, value]) => value)
-                    .map(([key]) => `${base}--${key}`)
-                    .join(' ');
-            }
-
-            return '';
-        };
-
-        return {
-            bem,
-            element,
-            modifier,
-        };
-    }, [base]);
+    return {
+        bem,
+        element,
+        modifier,
+    };
 }
