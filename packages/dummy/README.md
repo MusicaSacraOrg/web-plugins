@@ -1,11 +1,25 @@
-# @musica-sacra/loader
+# @musica-sacra/dummy
 
-A lightweight and reusable React loader component designed for Musica Sacra web applications. Easily customizable and ready to be integrated into any part of your UI to indicate loading states.
+Just a dummy react component
 
-## 📦 Installation
+## Installation
 
-Using npm:
+`npm install @musica-sacra/dummy`
 
-```bash
-npm install @musica-sacra/loader
+## Basic Usage
+
+```jsx
+// Any of your component file, e.g. AppComponent.tsx
+
+import { Dummy } from '@musica-sacra/dummy'
+
+function AppComponent() {
+    //...
+    
+    return (
+        <div>
+            <Dummy dummyText={'Here we go again!'} />
+        </div>
+    )
+}
 ```
