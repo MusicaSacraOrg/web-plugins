@@ -5,7 +5,7 @@ export interface LoaderProps {
     children?: React.ReactNode;
 }
 
-export const Loader: React.FC<LoaderProps> = ({ loading = true, children }) => {
+export const Loader = ({ loading = true, children }: LoaderProps) => {
     return (
         <div>{loading ? <div className={'ms-loader'}></div> : children}</div>
     );
