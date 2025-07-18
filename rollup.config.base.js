@@ -16,7 +16,7 @@ export const createBaseConfig = () => {
                 sourcemap: true,
             },
             {
-                file: 'dist/mjs',
+                file: 'dist/index.mjs',
                 format: 'esm',
                 sourcemap: true,
             },
