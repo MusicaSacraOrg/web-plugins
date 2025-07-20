@@ -1,6 +1,5 @@
 import { Container } from '../container/Container';
 import React from 'react';
-import './layoutBasic.scss';
 
 type LayoutBasicProps = {
     children?: React.ReactNode;

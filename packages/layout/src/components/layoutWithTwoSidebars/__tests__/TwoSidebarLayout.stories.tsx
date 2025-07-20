@@ -1,8 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TwoSidebarLayout } from '../LayoutWithTwoSidebars';
-import '../layoutWithTwoSidebars.scss';
+import { TwoSidebarLayout } from '../TwoSidebarLayout';
 
 type TwoSidebarLayoutProps = React.ComponentProps<typeof TwoSidebarLayout>;
 

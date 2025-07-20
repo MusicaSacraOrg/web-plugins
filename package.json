@@ -69,8 +69,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "dependencies": {
-    "@musica-sacra/dummy": "^0.0.3"
   }
 }

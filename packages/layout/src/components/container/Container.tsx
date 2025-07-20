@@ -1,5 +1,4 @@
 import React from 'react';
-import './container.scss';
 
 export type ContainerProps = {
     className?: string;

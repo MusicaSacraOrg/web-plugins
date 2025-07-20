@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from '../container/Container';
-import './layoutWithTwoSidebars.scss';
 
 type TwoSidebarLayoutProps = {
     leftSidebar: React.ReactNode;

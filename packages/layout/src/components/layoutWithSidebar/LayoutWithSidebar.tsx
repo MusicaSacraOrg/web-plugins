@@ -1,4 +1,3 @@
-import './layoutWithSidebar.scss';
 import { ReactNode, useState } from 'react';
 
 type LayoutWithSidebarProps = {
