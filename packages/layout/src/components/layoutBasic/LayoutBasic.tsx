@@ -1,4 +1,4 @@
-import { Container } from '../../container/Container';
+import { Container } from '../container/Container';
 import React from 'react';
 import './layoutBasic.css';
 
