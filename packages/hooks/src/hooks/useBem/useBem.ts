@@ -1,7 +1,7 @@
 export function useBem(base: string) {
     // ToDo Will return scrambled classname
     const bem = (name?: string | Record<string, boolean>) => {
-        if (typeof name === 'string') {
+        if (typeof name === 'string' && name !== '') {
             return `${base}__${name}`;
         }
 
@@ -17,7 +17,7 @@ export function useBem(base: string) {
 
     // ToDo Looks unnecesery, but later will return unscrambled className
     const element = (element?: string | Record<string, boolean>) => {
-        if (typeof element === 'string') {
+        if (typeof element === 'string' && element !== '') {
             return `${base}__${element}`;
         }
 
@@ -32,7 +32,7 @@ export function useBem(base: string) {
     };
 
     const modifier = (modifier: string | Record<string, boolean>) => {
-        if (typeof modifier === 'string') {
+        if (typeof modifier === 'string' && modifier !== '') {
             return `${base}--${modifier}`;
         }
 
