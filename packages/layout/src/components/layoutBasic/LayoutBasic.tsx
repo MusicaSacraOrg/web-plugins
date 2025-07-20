@@ -1,6 +1,6 @@
 import { Container } from '../container/Container';
 import React from 'react';
-import './layoutBasic.css';
+import './layoutBasic.scss';
 
 type LayoutBasicProps = {
     children?: React.ReactNode;
@@ -15,21 +15,12 @@ export function LayoutBasic({
     isPageLayout = false,
     size = 'large',
 }: LayoutBasicProps) {
+    const sizeClass = `ms-container--${size}`;
+    const layoutClass = isPageLayout ? 'ms-layout-basic--page-layout' : '';
+
     return (
-        <div
-            className={`ms-layout-basic ${isPageLayout ? 'ms-layout-basic--page-layout' : ''} ${className} `}
-        >
-            <Container
-                maxWidth={
-                    size === 'small'
-                        ? '800px'
-                        : size === 'medium'
-                          ? '1000px'
-                          : '1200px'
-                }
-            >
-                {children}
-            </Container>
+        <div className={`ms-layout-basic ${layoutClass} ${className}`}>
+            <Container className={sizeClass}>{children}</Container>
         </div>
     );
 }

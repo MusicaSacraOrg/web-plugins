@@ -6,7 +6,6 @@ type TwoSidebarLayoutProps = {
     leftSidebar: React.ReactNode;
     rightSidebar: React.ReactNode;
     children: React.ReactNode;
-    maxWidth?: string;
     className?: string;
     isPageLayout?: boolean;
 };
@@ -15,10 +14,14 @@ export const TwoSidebarLayout: React.FC<TwoSidebarLayoutProps> = ({
     leftSidebar,
     rightSidebar,
     children,
-    maxWidth,
+    className = '',
+    isPageLayout = true,
 }) => {
     return (
-        <Container maxWidth={maxWidth} isPageContainer>
+        <Container
+            isPageContainer={isPageLayout}
+            className={`ms-two-sidebar-layout-wrapper ${className}`}
+        >
             <div className="ms-two-sidebar-layout">
                 <aside className="ms-two-sidebar-layout__sidebar ms-two-sidebar-layout__sidebar--left">
                     {leftSidebar}

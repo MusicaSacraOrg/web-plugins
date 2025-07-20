@@ -78,10 +78,6 @@ const meta: Meta<typeof LayoutWithSidebar> = {
             control: 'text',
             description: 'Voliteľné CSS triedy pre hlavný kontajner',
         },
-        maxWidth: {
-            control: 'text',
-            description: 'Maximálna šírka layoutu (napr. "1200px", "80%").',
-        },
         isPageLayout: {
             control: 'boolean',
             description: 'Definuje, či je layout použitý ako celostránkový.',
@@ -113,7 +109,6 @@ export const Default: Story = {
     ...Template,
     args: {
         isPageLayout: false,
-        maxWidth: '1200px',
     },
 };
 
@@ -121,14 +116,12 @@ export const PageLayout: Story = {
     ...Template,
     args: {
         isPageLayout: true,
-        maxWidth: '100%',
     },
 };
 
 export const NarrowLayout: Story = {
     ...Template,
     args: {
-        maxWidth: '1000px',
         isPageLayout: false,
     },
 };
@@ -138,7 +131,6 @@ export const WithCustomClass: Story = {
     args: {
         className: 'my-custom-layout-styles',
         isPageLayout: true,
-        maxWidth: '1000px',
     },
 };
 
@@ -188,6 +180,5 @@ export const MixedContentLength: Story = {
     ),
     args: {
         isPageLayout: true,
-        maxWidth: '100%',
     },
 };

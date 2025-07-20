@@ -55,10 +55,6 @@ const meta: Meta<typeof TwoSidebarLayout> = {
             control: 'text',
             description: 'Voliteľná CSS trieda pre obal',
         },
-        maxWidth: {
-            control: 'text',
-            description: 'Maximálna šírka layoutu (napr. "1200px")',
-        },
         isPageLayout: {
             control: 'boolean',
             description:
@@ -85,6 +81,8 @@ const Template = (
 ) => (
     <TwoSidebarLayout
         {...args}
+        isPageLayout={args.isPageLayout}
+        className={args.className}
         leftSidebar={<SidebarBlock label="Ľavý" />}
         rightSidebar={<SidebarBlock label="Pravý" />}
     >
@@ -96,7 +94,7 @@ export const Default: Story = {
     render: Template,
     args: {
         isPageLayout: false,
-        maxWidth: '1200px',
+        className: '',
     },
 };
 
@@ -104,7 +102,7 @@ export const PageLayout: Story = {
     render: Template,
     args: {
         isPageLayout: true,
-        maxWidth: '100%',
+        className: '',
     },
 };
 
@@ -112,7 +110,7 @@ export const Narrow: Story = {
     render: Template,
     args: {
         isPageLayout: false,
-        maxWidth: '900px',
+        className: '',
     },
 };
 
@@ -120,6 +118,8 @@ export const WithoutRightSidebar: Story = {
     render: (args) => (
         <TwoSidebarLayout
             {...args}
+            isPageLayout={args.isPageLayout}
+            className={args.className}
             leftSidebar={<SidebarBlock label="Ľavý" />}
             rightSidebar={null}
         >
@@ -128,7 +128,7 @@ export const WithoutRightSidebar: Story = {
     ),
     args: {
         isPageLayout: false,
-        maxWidth: '1000px',
+        className: '',
     },
 };
 
@@ -136,6 +136,8 @@ export const LongContent: Story = {
     render: (args) => (
         <TwoSidebarLayout
             {...args}
+            isPageLayout={args.isPageLayout}
+            className={args.className}
             leftSidebar={<SidebarBlock label="Ľavý" />}
             rightSidebar={<SidebarBlock label="Pravý" />}
         >
@@ -155,6 +157,6 @@ export const LongContent: Story = {
     ),
     args: {
         isPageLayout: true,
-        maxWidth: '100%',
+        className: '',
     },
 };

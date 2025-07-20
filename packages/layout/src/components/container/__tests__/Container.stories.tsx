@@ -38,10 +38,6 @@ const meta: Meta<typeof Container> = {
             control: 'text',
             description: 'Voliteľné CSS triedy pre hlavný kontajner.',
         },
-        maxWidth: {
-            control: 'text',
-            description: 'Maximálna šírka kontajnera (napr. "800px", "75%").',
-        },
         isPageContainer: {
             control: 'boolean',
             description:
@@ -61,8 +57,7 @@ type Story = StoryObj<typeof meta>;
 const Template: Story = {
     render: (args) => (
         <Container {...args}>
-            {}
-            {args.children || <DummyContentBlock />} {}
+            {args.children || <DummyContentBlock />}
         </Container>
     ),
 };
@@ -70,11 +65,8 @@ const Template: Story = {
 export const Default: Story = {
     ...Template,
     args: {
-        maxWidth: '800px',
         isPageContainer: false,
-        children: (
-            <DummyContentBlock text="Defaultný kontajner (max. šírka 800px)" />
-        ),
+        children: <DummyContentBlock text="Defaultný kontajner" />,
     },
 };
 
@@ -82,7 +74,7 @@ export const PageContainer: Story = {
     ...Template,
     args: {
         isPageContainer: true,
-        maxWidth: '100%',
+        className: 'ms-container--wide',
         children: (
             <DummyContentBlock
                 text="Kontajner pre celú stránku"
@@ -93,14 +85,14 @@ export const PageContainer: Story = {
     },
 };
 
-export const WithCustomMaxWidth: Story = {
+export const WithModifierClass: Story = {
     ...Template,
     args: {
-        maxWidth: '500px',
         isPageContainer: false,
+        className: 'ms-container--narrow',
         children: (
             <DummyContentBlock
-                text="Kontajner s maximálnou šírkou 500px"
+                text="Kontajner s modifikačnou triedou"
                 backgroundColor="#ffe6e6"
             />
         ),
@@ -144,7 +136,6 @@ export const WithMultipleChildren: Story = {
         </Container>
     ),
     args: {
-        maxWidth: '900px',
         isPageContainer: false,
     },
 };
@@ -157,25 +148,17 @@ export const WithLongTextContent: Story = {
                 <p>
                     Toto je dlhý odstavec textu, aby sme vizuálne preverili, ako
                     sa text zalamuje a vyplňuje kontajner. Lorem ipsum dolor sit
-                    amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id
-                    est laborum.
+                    amet, consectetur adipiscing elit...
                 </p>
                 <p>
                     Ďalší odstavec pre ilustráciu. Nulla facilisi. Sed nec velit
-                    a turpis lacinia lacinia. Maecenas tristique orci ac sem
-                    efficitur, at fermentum ex venenatis.
+                    a turpis lacinia lacinia...
                 </p>
             </div>
         </Container>
     ),
     args: {
-        maxWidth: '700px',
         isPageContainer: false,
+        className: 'ms-container--text',
     },
 };

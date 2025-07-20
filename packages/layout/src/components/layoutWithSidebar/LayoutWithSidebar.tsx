@@ -1,11 +1,10 @@
-import './layoutWithSidebar.css';
-import { CSSProperties, ReactNode, useState } from 'react';
+import './layoutWithSidebar.scss';
+import { ReactNode, useState } from 'react';
 
 type LayoutWithSidebarProps = {
     className?: string;
     sidebar: ReactNode;
     content: ReactNode;
-    maxWidth?: string;
     isPageLayout?: boolean;
 };
 
@@ -13,14 +12,9 @@ export function LayoutWithSidebar({
     className = '',
     sidebar,
     content,
-    maxWidth,
     isPageLayout = false,
 }: LayoutWithSidebarProps) {
     const [isSidebarExpanded, setSidebarExpanded] = useState<boolean>(false);
-
-    const style: CSSProperties = maxWidth
-        ? ({ '--max-width': maxWidth } as CSSProperties)
-        : {};
 
     const toggleSidebar = () => {
         setSidebarExpanded(!isSidebarExpanded);
@@ -29,14 +23,14 @@ export function LayoutWithSidebar({
     return (
         <div
             className={`ms-layout-with-sidebar ${isPageLayout ? 'ms-layout-with-sidebar--page-layout' : ''} ${className}`}
-            style={style}
         >
-            <div className={'ms-layout-with-sidebar__sidebar-expand'}>
+            <div className="ms-layout-with-sidebar__sidebar-expand">
                 <a onClick={toggleSidebar}>{'>>'}</a>
             </div>
+
             {isSidebarExpanded && (
                 <div
-                    className={`ms-layout-with-sidebar__overlay ${isSidebarExpanded ? 'ms-layout-with-sidebar__overlay--active' : ''}`}
+                    className="ms-layout-with-sidebar__overlay ms-layout-with-sidebar__overlay--active"
                     onClick={toggleSidebar}
                 />
             )}
@@ -44,12 +38,13 @@ export function LayoutWithSidebar({
             <div
                 className={`ms-layout-with-sidebar__sidebar ${isSidebarExpanded ? 'ms-layout-with-sidebar__sidebar--expanded' : ''}`}
             >
-                <div className={`ms-layout-with-sidebar__sidebar-inner`}>
+                <div className="ms-layout-with-sidebar__sidebar-inner">
                     {sidebar}
                 </div>
             </div>
-            <div className={'ms-layout-with-sidebar__content'}>
-                <div className={`ms-layout-with-sidebar__content-inner`}>
+
+            <div className="ms-layout-with-sidebar__content">
+                <div className="ms-layout-with-sidebar__content-inner">
                     {content}
                 </div>
             </div>
