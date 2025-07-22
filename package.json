@@ -12,7 +12,10 @@
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint:fix --workspaces",
     "changeset": "changeset add",
-    "release": "changeset version && npm run build && git add . && git commit -m 'chore: release' || true && changeset publish && git push origin main && git push --tags",
+    "release": "npm run release:check && npm run release:prepare && changeset publish && npm run release:push",
+    "release:check": "test $(git branch --show-current) != 'main' && echo 'Switch to main branch, please.' && exit 1 || test \"`git status . --porcelain`\" && echo 'Uncommitted changes found. Aborting release.' && exit 1 || exit 0",
+    "release:prepare": "changeset version && npm run build && npm i --package-lock-only --ignore-scripts",
+    "release:push": "git add .changeset package-lock.json packages/*/CHANGELOG.md packages/*/package.json && git commit -m 'Publish' && changeset tag && git push --follow-tags",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "clean": "npm run clean --workspaces"
