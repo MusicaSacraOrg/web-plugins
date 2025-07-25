@@ -1,6 +1,6 @@
 {
   "name": "@musica-sacra/loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reusable loader component for Musica Sacra web apps",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
