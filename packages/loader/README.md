@@ -15,10 +15,10 @@ import { Loader } from "@musica-sacra/loader";
 
 function App() {
   return (
-    <div>
-      {/* Show loader when loading */}
-      <Loader loading={true} color="#BAFC50" type="spinner" />
-    </div>
+    <Loader loading={true}>
+      {/* This content will be shown when loading is false */}
+      <div>Content loaded!</div>
+    </Loader>
   );
 }
-```
+
