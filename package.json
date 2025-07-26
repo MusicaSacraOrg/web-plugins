@@ -15,7 +15,7 @@
     "release": "npm run release:prepare && changeset publish && npm run release:push",
     "release:prepare": "changeset version && npm run build && npm i --package-lock-only --ignore-scripts",
     "release:push": "git add .changeset package-lock.json packages/*/CHANGELOG.md packages/*/package.json && git commit -m 'Publish' && changeset tag && git push --follow-tags",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "npm run build && storybook dev -p 6006",
     "build-storybook": "storybook build",
     "clean": "npm run clean --workspaces"
   },
