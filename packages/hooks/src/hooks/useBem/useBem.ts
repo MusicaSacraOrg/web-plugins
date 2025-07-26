@@ -1,18 +1,35 @@
 export function useBem(base: string) {
     // ToDo Will return scrambled classname
-    const bem = (name?: string | Record<string, boolean>) => {
-        if (typeof name === 'string' && name !== '') {
-            return `${base}__${name}`;
+    const bem = (
+        name?: string | Record<string, boolean>,
+        ...names: string[]
+    ) => {
+        const classnames = [];
+
+        if (name === base) {
+            classnames.push(base);
+        } else {
+            if (typeof name === 'string' && name !== '') {
+                classnames.push(`${base}__${name}`);
+            }
+
+            if (typeof name === 'object') {
+                classnames.push(
+                    Object.entries(name)
+                        .filter(([, value]) => value)
+                        .map(([key]) => `${base}__${key}`)
+                        .join(' ')
+                );
+            }
+
+            classnames.push(base);
         }
 
-        if (typeof name === 'object') {
-            return Object.entries(name)
-                .filter(([, value]) => value)
-                .map(([key]) => `${base}__${key}`)
-                .join(' ');
+        for (const classname of names) {
+            classnames.push(classname);
         }
 
-        return base;
+        return classnames.join(' ');
     };
 
     // ToDo Looks unnecesery, but later will return unscrambled className
@@ -50,5 +67,6 @@ export function useBem(base: string) {
         bem,
         element,
         modifier,
+        base,
     };
 }

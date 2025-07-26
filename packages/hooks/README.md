@@ -48,6 +48,12 @@ bem({
     'child': true,
     'child--blue': false
 }) // With object passed, will go trough each key and return joined classname from truthy values
+
+// You can import `base` from the useBem too. It will be the base classname you provided. 
+// If the first argument matches the base (base === base), then it will return base classnem, like without argument provided
+bem(base)
+// This gets useful in the scenario you want to append additional classnames to the element
+bem(base, 'additional-classname') // This will return 'base additional-classname' classname
 ```
 
 ### element()
