@@ -1,5 +1,11 @@
 # @musica-sacra/loader
 
+## 1.0.2
+
+### Patch Changes
+
+- ed0ead3: Update dependency list
+
 ## 1.0.1
 
 ### Patch Changes
