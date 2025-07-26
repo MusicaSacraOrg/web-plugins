@@ -15,6 +15,20 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "layout",
+    "react",
+    "react-layout",
+    "musica-sacra",
+    "web",
+    "components",
+    "container",
+    "ui",
+    "flexbox",
+    "header",
+    "footer",
+    "sidebar"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.3",
