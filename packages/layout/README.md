@@ -25,11 +25,12 @@ import { LayoutWithSidebar } from "@musica-sacra/layout";
 function App() {
 return (
 <LayoutWithSidebar
-sidebar={<div>Navigation</div>}
-header={<header>My App</header>}
-footer={<footer>© 2025 Musica Sacra</footer>}
+sidebar={<nav>Navigation</nav>}
+isPageLayout
 >
+<header>My App</header>
 <main>Main Content</main>
+<footer>© 2025 Musica Sacra</footer>
 </LayoutWithSidebar>
 );
 }
