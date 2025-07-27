@@ -1,5 +1,5 @@
 import React from 'react';
-import { useClassNames } from '@musica-sacra/hooks';
+import { useBem } from '@musica-sacra/hooks';
 
 export type ContainerProps = {
     className?: string;
@@ -10,19 +10,13 @@ export type ContainerProps = {
 export function Container({
     className = '',
     children,
-    isPageContainer,
+    isPageContainer = false,
 }: ContainerProps) {
-    const cx = useClassNames();
+    const { bem } = useBem('ms-container');
 
-    return (
-        <div
-            className={cx(
-                'ms-container',
-                isPageContainer && 'ms-container--page-container',
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
+    const classes = [bem({ 'page-container': isPageContainer }), className]
+        .filter(Boolean)
+        .join(' ');
+
+    return <div className={classes}>{children}</div>;
 }
