@@ -24,10 +24,10 @@ $ms-sidebar-width: 16rem; // 256px
     }
 
     &__main {
-        flex: 1 1 auto; // zaberie zostávajúci priestor
+        flex: 1 1 auto; // takes the remaining space
         padding: 1.5rem;
         background-color: white;
-        min-width: 0; // pre správne zalamovanie obsahu vnútri hlavnej oblasti
+        min-width: 0; // ensures proper text wrapping inside the main area
     }
 
     @media (min-width: 1024px) {
