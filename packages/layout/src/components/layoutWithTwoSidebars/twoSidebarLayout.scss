@@ -1,0 +1,46 @@
+$ms-sidebar-width: 16rem; // 256px
+
+.ms-two-sidebar-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &--page-layout {
+        min-height: 100vh;
+    }
+
+    &__sidebar {
+        width: $ms-sidebar-width;
+        flex-shrink: 0;
+        padding: 1rem;
+
+        &--left {
+            background-color: #e2e8f0;
+        }
+
+        &--right {
+            background-color: #f1f5f9;
+        }
+    }
+
+    &__main {
+        flex: 1 1 auto; // takes the remaining space
+        padding: 1.5rem;
+        background-color: white;
+        min-width: 0; // ensures proper text wrapping inside the main area
+    }
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
+
+    @media (max-width: 1023px) {
+        &__sidebar {
+            display: none;
+        }
+
+        &__main {
+            width: 100%;
+        }
+    }
+}

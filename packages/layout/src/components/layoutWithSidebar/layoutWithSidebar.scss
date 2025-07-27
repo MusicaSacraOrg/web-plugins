@@ -1,0 +1,156 @@
+.ms-layout-with-sidebar {
+    --max-width: 1200px;
+    --sidebar-width: 300px;
+    --mobile-breakpoint: 1200px;
+    --transition-speed: 0.3s;
+
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+    }
+
+    &--page-layout {
+        min-height: 100vh;
+    }
+
+    /* HAMBURGER TLAČIDLO - OPRAVENÁ VERZIA */
+    &__sidebar-expand {
+        display: none;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: all var(--transition-speed) ease;
+
+        /* Centrovanie ikony */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1200px) {
+            display: flex;
+        }
+
+        &:hover {
+            background-color: #f8f8f8;
+        }
+
+        .ms-layout-with-sidebar__hamburger-icon {
+            position: relative;
+            width: 22px;
+            height: 2px;
+            background-color: #333;
+            border-radius: 1px;
+            transition: all var(--transition-speed) ease;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 22px;
+                height: 2px;
+                background-color: #333;
+                border-radius: 1px;
+                transition: all var(--transition-speed) ease;
+                left: 0;
+            }
+
+            &::before {
+                top: -6px;
+            }
+
+            &::after {
+                top: 6px;
+            }
+        }
+
+        &.expanded {
+            .ms-layout-with-sidebar__hamburger-icon {
+                background-color: transparent;
+
+                &::before {
+                    transform: translateY(6px) rotate(45deg);
+                }
+
+                &::after {
+                    transform: translateY(-6px) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    /* OVERLAY */
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: opacity var(--transition-speed) ease, z-index 0s linear var(--transition-speed);
+        opacity: 0;
+        cursor: pointer;
+        z-index: -1;
+        backdrop-filter: blur(2px);
+
+        &--active {
+            opacity: 1;
+            z-index: 9;
+            transition: opacity var(--transition-speed) ease, z-index 0s linear;
+        }
+    }
+
+    /* SIDEBAR */
+    &__sidebar {
+        width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
+        background-color: white;
+        z-index: 10;
+        transition: transform var(--transition-speed) ease;
+
+        @media (max-width: 1200px) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            transform: translateX(-100%);
+            width: 85%;
+            max-width: 320px;
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+        }
+
+        &--expanded {
+            @media (max-width: 1200px) {
+                transform: translateX(0);
+            }
+        }
+
+        &-inner {
+            width: 100%;
+            padding: 1.5rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+    }
+
+    /* HLAVNÝ OBSAH */
+    &__content {
+        flex: 1;
+        min-width: 0;
+        overflow-x: hidden;
+
+        &-inner {
+            width: 100%;
+            padding: 1.5rem;
+        }
+    }
+}
