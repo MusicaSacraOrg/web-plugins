@@ -1,6 +1,6 @@
 {
   "name": "@musica-sacra/hooks",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Plugin with useful hooks for MusicaSacra web applications.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
