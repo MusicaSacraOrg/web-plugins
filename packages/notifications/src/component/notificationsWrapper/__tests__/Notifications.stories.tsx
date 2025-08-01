@@ -35,7 +35,7 @@ const mockNotifications = [
 ];
 
 const meta = {
-    title: '@musica-sacra/notifications',
+    title: '@musica-sacra/Notifications/components/Notifications',
     component: Notifications,
     args: {
         notifications: mockNotifications,
