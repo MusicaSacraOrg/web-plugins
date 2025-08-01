@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Loader } from '@musica-sacra/loader';
 
 const meta: Meta<typeof Loader> = {
-    title: '@musica-sacra/Loader',
+    title: '@musica-sacra/Loader/components/loader',
     component: Loader,
     args: {
         loading: true,
