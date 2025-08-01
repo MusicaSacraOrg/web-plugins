@@ -1,5 +1,11 @@
 # @musica-sacra/loader
 
+## 1.0.3
+
+### Patch Changes
+
+- 0060d92: Fix the title in the storybook story
+
 ## 1.0.2
 
 ### Patch Changes

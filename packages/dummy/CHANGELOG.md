@@ -1,5 +1,11 @@
 # @musica-sacra/dummy
 
+## 0.0.4
+
+### Patch Changes
+
+- 0060d92: Fix the title in the storybook story
+
 ## 0.0.3
 
 ### Patch Changes

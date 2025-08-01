@@ -1,5 +1,11 @@
 # @musica-sacra/notifications
 
+## 1.0.1
+
+### Patch Changes
+
+- 0060d92: Fix the title in the storybook story
+
 ## 1.0.0
 
 ### Major Changes
