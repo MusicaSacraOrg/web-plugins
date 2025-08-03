@@ -27,8 +27,8 @@ export function useBem(base: string) {
             }
         };
 
-        if (name === base) {
-            classnames.push(base);
+        if (name === base || name === undefined) {
+            addClass(base);
         } else {
             if (typeof name === 'string' && name !== '') {
                 addClass(`${base}__${name}`);
@@ -37,8 +37,6 @@ export function useBem(base: string) {
             if (typeof name === 'object') {
                 handleObject(name);
             }
-
-            classnames.push(base);
         }
 
         for (const classname of names) {
