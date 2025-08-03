@@ -1,5 +1,11 @@
 # @musica-sacra/hooks
 
+## 1.2.1
+
+### Patch Changes
+
+- 32bfbf8: Fix appending base classname
+
 ## 1.2.0
 
 ### Minor Changes
