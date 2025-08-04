@@ -6,26 +6,11 @@ import { LayoutWithSidebar } from '../LayoutWithSidebar';
 const DummySidebarContent: React.FC = () => (
     <div
         style={{
-            padding: '20px',
             backgroundColor: '#f0f0f0',
             borderRight: '1px solid #ccc',
             minHeight: '100vh',
         }}
-    >
-        <h3 style={{ marginTop: 0 }}>Navigačné menu</h3>
-        <ul>
-            <li>
-                <a href="#link1">Odkaz 1</a>
-            </li>
-            <li>
-                <a href="#link2">Odkaz 2</a>
-            </li>
-            <li>
-                <a href="#link3">Odkaz 3</a>
-            </li>
-        </ul>
-        <p>Nejaký ďalší obsah sidebar-u.</p>
-    </div>
+    ></div>
 );
 
 const DummyContent: React.FC = () => (
@@ -57,7 +42,6 @@ const DummyContent: React.FC = () => (
         </p>
         <button
             style={{
-                padding: '10px 20px',
                 backgroundColor: '#007bff',
                 color: 'white',
                 border: 'none',

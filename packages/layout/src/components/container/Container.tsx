@@ -14,9 +14,13 @@ export function Container({
 }: ContainerProps) {
     const { bem } = useBem('ms-container');
 
-    const classes = [bem({ 'page-container': isPageContainer }), className]
-        .filter(Boolean)
-        .join(' ');
-
-    return <div className={classes}>{children}</div>;
+    return (
+        <div
+            className={`${bem({ 'page-container': isPageContainer })}${
+                className ? ' ' + className : ''
+            }`}
+        >
+            {children}
+        </div>
+    );
 }

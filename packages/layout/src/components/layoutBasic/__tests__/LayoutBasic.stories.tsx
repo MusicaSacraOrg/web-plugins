@@ -8,7 +8,6 @@ export function Dummy() {
             style={{
                 backgroundColor: 'orange',
                 padding: '20px',
-                border: '1px solid black',
                 textAlign: 'center',
             }}
         >
