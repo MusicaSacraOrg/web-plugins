@@ -2,31 +2,57 @@ export function useBem(base: string) {
     // ToDo Will return scrambled classname
     const bem = (
         name?: string | Record<string, boolean>,
-        ...names: string[]
+        ...names: Array<string | Record<string, boolean>>
     ) => {
-        const classnames = [];
+        const classnames: string[] = [];
 
-        if (name === base) {
-            classnames.push(base);
+        const addClass = (classname: string) => {
+            if (classname && !classnames.includes(classname)) {
+                classnames.push(classname);
+            }
+        };
+
+        const handleObject = (
+            obj: Record<string, boolean>,
+            prefixBase = true
+        ) => {
+            for (const [key, value] of Object.entries(obj)) {
+                if (value) {
+                    if (key === base) {
+                        addClass(base);
+                    } else {
+                        addClass(prefixBase ? `${base}__${key}` : key);
+                    }
+                }
+            }
+        };
+
+        if (name === base || name === undefined) {
+            addClass(base);
         } else {
             if (typeof name === 'string' && name !== '') {
-                classnames.push(`${base}__${name}`);
+                addClass(`${base}__${name}`);
             }
 
             if (typeof name === 'object') {
-                classnames.push(
-                    Object.entries(name)
-                        .filter(([, value]) => value)
-                        .map(([key]) => `${base}__${key}`)
-                        .join(' ')
-                );
+                handleObject(name);
             }
-
-            classnames.push(base);
         }
 
         for (const classname of names) {
-            classnames.push(classname);
+            if (classname === base) {
+                addClass(base);
+            } else {
+                if (typeof classname === 'string' && classname !== '') {
+                    addClass(classname);
+                }
+
+                if (typeof classname === 'object') {
+                    handleObject(classname, false);
+                }
+
+                addClass(base);
+            }
         }
 
         return classnames.join(' ');

@@ -1,5 +1,20 @@
 # @musica-sacra/hooks
 
+## 1.2.1
+
+### Patch Changes
+
+- 32bfbf8: Fix appending base classname
+
+## 1.2.0
+
+### Minor Changes
+
+- bda23d7: Add option to provide more arguments to bem()
+  - **What** Enable bem() to accept more arguments. Each will be appended as plain classname.
+  - **Why** We want to be able to append additional classnames to the element, that should not be writeen in the bem format.
+  - **How** Nothing.
+
 ## 1.1.0
 
 ### Minor Changes
