@@ -2,23 +2,24 @@ import React from 'react';
 import { useBem } from '@musica-sacra/hooks';
 
 export type ContainerProps = {
-    className?: string;
+    classname?: string;
     children?: React.ReactNode;
     isPageContainer?: boolean;
 };
 
 export function Container({
-    className = '',
+    classname = '',
     children,
     isPageContainer = false,
 }: ContainerProps) {
-    const { bem } = useBem('ms-container');
+    const { bem, base } = useBem('ms-container');
 
     return (
         <div
-            className={`${bem({ 'page-container': isPageContainer })}${
-                className ? ' ' + className : ''
-            }`}
+            className={bem(base, {
+                [classname]: true,
+                'ms-container--page-container': isPageContainer,
+            })}
         >
             {children}
         </div>

@@ -18,16 +18,7 @@
   "keywords": [
     "layout",
     "react",
-    "react-layout",
-    "musica-sacra",
-    "web",
-    "components",
-    "container",
-    "ui",
-    "flexbox",
-    "header",
-    "footer",
-    "sidebar"
+    "musica-sacra"
   ],
   "dependencies": {
     "@musica-sacra/hooks": "^1.2.1"
