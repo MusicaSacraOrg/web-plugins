@@ -54,17 +54,13 @@ const DummyContent: React.FC = () => (
 );
 
 const meta: Meta<typeof LayoutWithSidebar> = {
-    title: 'Layouts/LayoutWithSidebar',
+    title: '@musica-sacra/Layout/components/LayoutWithSidebar',
     component: LayoutWithSidebar,
 
     argTypes: {
         className: {
             control: 'text',
             description: 'Voliteľné CSS triedy pre hlavný kontajner',
-        },
-        isPageLayout: {
-            control: 'boolean',
-            description: 'Definuje, či je layout použitý ako celostránkový.',
         },
 
         sidebar: { control: false },
@@ -91,31 +87,6 @@ const Template: Story = {
 
 export const Default: Story = {
     ...Template,
-    args: {
-        isPageLayout: false,
-    },
-};
-
-export const PageLayout: Story = {
-    ...Template,
-    args: {
-        isPageLayout: true,
-    },
-};
-
-export const NarrowLayout: Story = {
-    ...Template,
-    args: {
-        isPageLayout: false,
-    },
-};
-
-export const WithCustomClass: Story = {
-    ...Template,
-    args: {
-        className: 'my-custom-layout-styles',
-        isPageLayout: true,
-    },
 };
 
 export const MixedContentLength: Story = {
