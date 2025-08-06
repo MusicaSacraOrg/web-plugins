@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Container } from '../Container';
+import { Container } from '@musica-sacra/layout';
 
 const meta: Meta<typeof Container> = {
     title: '@musica-sacra/Layout/components/Container',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutBasic } from '../LayoutBasic';
+import { LayoutBasic } from '@musica-sacra/layout';
 import type { StoryObj } from '@storybook/react';
 
 const meta = {

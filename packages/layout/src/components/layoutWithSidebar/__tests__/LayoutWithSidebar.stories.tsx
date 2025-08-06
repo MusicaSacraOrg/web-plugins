@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { LayoutWithSidebar } from '../LayoutWithSidebar';
+import { LayoutWithSidebar } from '@musica-sacra/layout';
 
 const DummySidebarContent: React.FC = () => (
     <div
@@ -65,9 +65,6 @@ const meta: Meta<typeof LayoutWithSidebar> = {
 
         sidebar: { control: false },
     },
-    parameters: {
-        layout: 'fullscreen',
-    },
 };
 
 export default meta;
@@ -76,11 +73,9 @@ type Story = StoryObj<typeof meta>;
 
 const Template: Story = {
     render: (args) => (
-        <LayoutWithSidebar
-            {...args}
-            sidebar={<DummySidebarContent />}
-            children=<DummyContent />
-        />
+        <LayoutWithSidebar {...args} sidebar={<DummySidebarContent />}>
+            <DummyContent />
+        </LayoutWithSidebar>
     ),
 };
 
@@ -123,33 +118,32 @@ export const MixedContentLength: Story = {
                     <p>Len pár položiek.</p>
                 </div>
             }
-            children={
-                <div
-                    style={{
-                        padding: '20px',
-                        backgroundColor: '#fff',
-                        minHeight: '150vh',
-                    }}
-                >
-                    <h2>Veľmi dlhý obsah</h2>
-                    <p>
-                        Tento príbeh testuje, ako sa layout správa pri veľmi
-                        dlhom obsahu v hlavnej časti. Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.
-                    </p>
-                    {[...Array(50)].map((_, i) => (
-                        <p key={i}>Riadok obsahu {i + 1}.</p>
-                    ))}
-                </div>
-            }
-        />
+        >
+            <div
+                style={{
+                    padding: '20px',
+                    backgroundColor: '#fff',
+                    minHeight: '150vh',
+                }}
+            >
+                <h2>Veľmi dlhý obsah</h2>
+                <p>
+                    Tento príbeh testuje, ako sa layout správa pri veľmi dlhom
+                    obsahu v hlavnej časti. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id
+                    est laborum.
+                </p>
+                {[...Array(50)].map((_, i) => (
+                    <p key={i}>Riadok obsahu {i + 1}.</p>
+                ))}
+            </div>
+        </LayoutWithSidebar>
     ),
     args: {
         isPageLayout: true,
