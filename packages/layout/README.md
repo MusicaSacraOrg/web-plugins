@@ -4,35 +4,79 @@ Layout components for building easy and consistent web app layouts in React.
 
 ## Installation
 
-npm install @musica-sacra/layout --save
+`npm install @musica-sacra/layout --save`
 
 ## Provided Components
 
 This package provides the following React layout components:
 
-- `Container`: Main container for the app layout.
-- `LayoutBasic`: Basic layout structure with header, main, and footer.
-- `LayoutWithSidebar`: Layout with an optional side navigation panel.
-- `TwoSidebarLayout`: Layout with both left and right sidebars.
+- `Container`: Styled wrapper. 
+- `LayoutBasic`: Single column layout utilizing previously mentioned Container as main wrapper.
+- `LayoutWithSidebar`: Double column layout with main content and left sidebar. 
 
-## Basic Usage
+## \<Container />
 
-Here’s a minimal example of how to use a layout component in your React app:
+Basic styled wrapper that provides container of with 1200px with auto margins on sides.
 
-```import React from "react";
-import { LayoutWithSidebar } from "@musica-sacra/layout";
+```jsx
+import { Container } from '@musica-sacra/layout'
 
-function App() {
-return (
-<LayoutWithSidebar
-sidebar={<nav>Navigation</nav>}
-isPageLayout
->
-<header>My App</header>
-<main>Main Content</main>
-<footer>© 2025 Musica Sacra</footer>
-</LayoutWithSidebar>
-);
+export function ExampleComponent() {
+    return (
+        <Container>
+            {/* Your Content */}
+        </Container>
+    )
 }
+```
 
-export default App;```
+## \<LayoutBasic />
+
+Component for creating page layouts. Single column. Provides aditional wrapper around `<Container/>`.
+
+```jsx
+import { LayoutBasic } from '@musica-sacra/layout'
+
+export function ExampleComponent() {
+    return (
+        <LayoutBasic>
+            {/* Your Content */}
+        </LayoutBasic>
+    )
+}
+```
+
+## \<LayoutWithSidebar />
+
+Double column layout with main content and sidebar on the left side. 
+
+```jsx
+import { LayoutWithSidebar } from '@musica-sacra/layout'
+
+export function ExampleComponent() {
+    return (
+        <LayoutWithSidebar
+            sidebar={<div>{/* Your Sidebar Content*/}</div>}
+        >
+            {/* Your Main Content */}
+        </LayoutWithSidebar>
+    )
+}
+```
+
+Also provides context through hook useSidebar(), which gives you methods:
+- closeSidebar()
+
+```jsx
+import { useSidebar } from '@musica-sacra/layout';
+
+export function ExampleSidebar() {
+    const { closeSidebar } = useSidebar();
+
+    return (
+        <div>
+            <button onClick={closeSidebar}>Click me</button>
+        </div>
+    );
+}
+```
