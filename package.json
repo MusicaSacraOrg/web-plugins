@@ -2,6 +2,7 @@
   "name": "@musica-sacra/web-plugins",
   "version": "0.0.0",
   "main": "index.js",
+  "type": "module",
   "private": "true",
   "workspaces": [
     "packages/*"
