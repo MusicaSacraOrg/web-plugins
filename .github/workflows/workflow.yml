@@ -47,6 +47,7 @@ jobs:
         run: |
           rm -rf node_modules package-lock.json
           npm ci
+          npm install @rollup/rollup-linux-x64-gnu
 
       - name: Build
         run: npm run build
