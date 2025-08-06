@@ -59,14 +59,14 @@
         }
 
         &sidebar {
-            background-color: rgb(246, 246, 247); // TODO delete
             width: calc((100% - ($max-width - 64px)) / 2 + $sidebar-min-width - 32px);
             min-width: $sidebar-min-width;
             height: auto;
             z-index: 10;
+            background-color: rgb(246, 246, 247);
 
             @media (max-width: $max-width) {
-                position: absolute;
+                position: fixed;
                 top: 0;
                 left: 0;
                 min-height: 100vh;
@@ -77,6 +77,8 @@
 
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
+
+                overflow: auto;
             }
 
             &-- {
@@ -93,7 +95,10 @@
             display: none;
             width: 100%;
             padding: 1rem;
-            background-color: rgb(246, 246, 247); // TODO delete
+            position: sticky;
+            top: 0;
+            background-color: rgb(246, 246, 247);
+            box-shadow: 0 1px 10px rgba(150, 150, 150, 0.1);
 
             @media (max-width: $max-width) {
                 display: flex;
@@ -111,7 +116,7 @@
 
                 &:hover {
                     cursor: pointer;
-                    color: rgba(8, 130, 170, 1); // TODO delete
+                    color: rgba(8, 130, 170, 1);
                 }
             }
         }
@@ -148,6 +153,12 @@
                     width: 100%;
                 }
             }
+        }
+    }
+
+    &-- {
+        &page-layout {
+            min-height: 100vh;
         }
     }
 }

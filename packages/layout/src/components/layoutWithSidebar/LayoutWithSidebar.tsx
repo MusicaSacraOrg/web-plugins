@@ -1,16 +1,19 @@
 import { ReactNode, useState } from 'react';
 import { useBem } from '@musica-sacra/hooks';
+import { SidebarContext } from '../../context/SidebarContext';
 
 type LayoutWithSidebarProps = {
     className?: string;
     sidebar: ReactNode;
-    content: ReactNode;
+    children: ReactNode;
+    isPageLayout?: boolean;
 };
 
 export function LayoutWithSidebar({
     className = '',
     sidebar,
-    content,
+    children,
+    isPageLayout = false,
 }: LayoutWithSidebarProps) {
     const { bem, base } = useBem('ms-layout-with-sidebar');
 
@@ -20,10 +23,13 @@ export function LayoutWithSidebar({
         setSidebarExpanded((prev) => !prev);
     };
 
+    const closeSidebar = () => setSidebarExpanded(false);
+
     return (
         <div
             className={bem(base, {
                 [className]: true,
+                'ms-layout-with-sidebar--page-layout': isPageLayout,
             })}
         >
             <div className={bem('sidebar-expand')}>
@@ -89,13 +95,13 @@ export function LayoutWithSidebar({
                     </div>
                 )}
 
-                <div className={bem('sidebar-content')}>{sidebar}</div>
+                <SidebarContext.Provider value={{ closeSidebar }}>
+                    <div className={bem('sidebar-content')}>{sidebar}</div>
+                </SidebarContext.Provider>
             </aside>
 
-            <main className="ms-layout-with-sidebar__content">
-                <div className="ms-layout-with-sidebar__content-inner">
-                    {content}
-                </div>
+            <main className={bem('content')}>
+                <div className={bem('content-inner')}>{children}</div>
             </main>
         </div>
     );

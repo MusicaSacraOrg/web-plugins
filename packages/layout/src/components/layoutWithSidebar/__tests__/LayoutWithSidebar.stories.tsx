@@ -64,7 +64,6 @@ const meta: Meta<typeof LayoutWithSidebar> = {
         },
 
         sidebar: { control: false },
-        content: { control: false },
     },
     parameters: {
         layout: 'fullscreen',
@@ -80,7 +79,7 @@ const Template: Story = {
         <LayoutWithSidebar
             {...args}
             sidebar={<DummySidebarContent />}
-            content={<DummyContent />}
+            children=<DummyContent />
         />
     ),
 };
@@ -94,18 +93,37 @@ export const MixedContentLength: Story = {
         <LayoutWithSidebar
             {...args}
             sidebar={
-                <div
-                    style={{
-                        padding: '20px',
-                        backgroundColor: '#e0ffe0',
-                        borderRight: '1px solid #ccc',
-                    }}
-                >
+                <div style={{}}>
                     <h4>Krátky Sidebar</h4>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
                     <p>Len pár položiek.</p>
                 </div>
             }
-            content={
+            children={
                 <div
                     style={{
                         padding: '20px',
