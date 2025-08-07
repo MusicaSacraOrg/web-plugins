@@ -3,29 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { LayoutWithSidebar } from '@musica-sacra/layout';
 
-const DummySidebarContent: React.FC = () => (
-    <div
-        style={{
-            backgroundColor: '#f0f0f0',
-            borderRight: '1px solid #ccc',
-            minHeight: '100vh',
-        }}
-    ></div>
-);
-
-const DummyContent: React.FC = () => (
-    <div
-        style={{
-            padding: '20px',
-            backgroundColor: '#ffffff',
-            minHeight: '100vh',
-        }}
-    >
-        <h1>Hlavný obsah stránky</h1>
+const DummyContent = () => (
+    <div>
+        <h1>Main Content</h1>
         <p>
-            Toto je placeholder pre hlavný obsah. Môže tu byť text, obrázky,
-            formuláre alebo akýkoľvek iný komponent. Cieľom tohto layoutu je
-            poskytnúť štruktúru pre sidebar a hlavnú oblasť.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
         </p>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -33,7 +18,7 @@ const DummyContent: React.FC = () => (
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
         </p>
-        <h2>Podsekcia</h2>
+        <h2>Lorem Ipsum</h2>
         <p>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
@@ -60,7 +45,6 @@ const meta: Meta<typeof LayoutWithSidebar> = {
     argTypes: {
         className: {
             control: 'text',
-            description: 'Voliteľné CSS triedy pre hlavný kontajner',
         },
 
         sidebar: { control: false },
@@ -73,7 +57,7 @@ type Story = StoryObj<typeof meta>;
 
 const Template: Story = {
     render: (args) => (
-        <LayoutWithSidebar {...args} sidebar={<DummySidebarContent />}>
+        <LayoutWithSidebar {...args} sidebar={<div></div>}>
             <DummyContent />
         </LayoutWithSidebar>
     ),
@@ -89,7 +73,7 @@ export const MixedContentLength: Story = {
             {...args}
             sidebar={
                 <div style={{}}>
-                    <h4>Krátky Sidebar</h4>
+                    <h4>Long sidebar</h4>
                     <p>Len pár položiek.</p>
                     <p>Len pár položiek.</p>
                     <p>Len pár položiek.</p>
@@ -119,30 +103,7 @@ export const MixedContentLength: Story = {
                 </div>
             }
         >
-            <div
-                style={{
-                    padding: '20px',
-                    backgroundColor: '#fff',
-                    minHeight: '150vh',
-                }}
-            >
-                <h2>Veľmi dlhý obsah</h2>
-                <p>
-                    Tento príbeh testuje, ako sa layout správa pri veľmi dlhom
-                    obsahu v hlavnej časti. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id
-                    est laborum.
-                </p>
-                {[...Array(50)].map((_, i) => (
-                    <p key={i}>Riadok obsahu {i + 1}.</p>
-                ))}
-            </div>
+            <DummyContent />
         </LayoutWithSidebar>
     ),
     args: {
