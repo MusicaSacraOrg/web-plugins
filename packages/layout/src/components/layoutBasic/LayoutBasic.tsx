@@ -4,19 +4,19 @@ import { useBem } from '@musica-sacra/hooks';
 
 type LayoutBasicProps = {
     children?: React.ReactNode;
-    classname?: string;
+    className?: string;
     isPageLayout?: boolean;
 };
 
 export function LayoutBasic({
     children,
-    classname = '',
+    className = '',
     isPageLayout = false,
 }: LayoutBasicProps) {
     const { bem, base } = useBem('ms-layout-basic');
 
     return (
-        <div className={bem(base, classname)}>
+        <div className={bem(base, className)}>
             <Container isPageContainer={isPageLayout}>{children}</Container>
         </div>
     );
