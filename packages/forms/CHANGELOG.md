@@ -1,5 +1,14 @@
 # @musica-sacra/forms
 
+## 1.0.1
+
+### Patch Changes
+
+- a7cc2ff: Add default html props to button, label and input
+  - **What** Add default html props to button, label and input
+  - **Why** Props were missing.
+  - **How** Nothing.
+
 ## 1.0.0
 
 ### Major Changes
