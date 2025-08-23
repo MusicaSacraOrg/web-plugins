@@ -1,0 +1,19 @@
+.ms-input {
+    width: 100%;
+
+    outline: none;
+    border: 1px solid rgba(60, 60, 67, 0.2);
+    border-radius: 4px;
+
+    color: rgba(60, 60, 67, 1);
+
+    font-size: 1rem;
+
+    padding: 1rem;
+
+    &:focus,
+    &:hover,
+    &:active {
+        border: 1px solid rgba(8, 130, 170, 1);
+    }
+}

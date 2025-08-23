@@ -1,0 +1,39 @@
+.ms-button {
+    width: fit-content;
+
+    padding: 1rem;
+
+    color: rgba(60, 60, 67, 1);
+    background-color: rgba(246, 246, 247, 1);
+
+    font-size: 1rem;
+
+    outline: none;
+    border: 1px solid rgba(60, 60, 67, 0.12);
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        background-color: rgba(249, 249, 249, 1);
+        color: rgba(142, 142, 147, 1);
+    }
+
+    &-- {
+        &accent {
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(8, 130, 170, 1);
+
+            &:disabled {
+                background-color: rgba(8, 130, 170, 0.2);
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        &rounded {
+            border-radius: 12px;
+        }
+    }
+}
