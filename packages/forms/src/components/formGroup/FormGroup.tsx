@@ -7,7 +7,7 @@ type FormGroupProps = {
 };
 
 export function FormGroup({ children, className = '' }: FormGroupProps) {
-    const { bem, base } = useBem('ms-from-group');
+    const { bem, base } = useBem('ms-form-group');
 
     return <div className={bem(base, className)}>{children}</div>;
 }
