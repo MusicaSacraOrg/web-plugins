@@ -1,7 +1,7 @@
 import { useBem } from '@musica-sacra/hooks';
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode;
     className?: string;
     accent?: boolean;
@@ -13,6 +13,7 @@ export function Button({
     className = '',
     accent = false,
     rounded = false,
+    ...props
 }: ButtonProps) {
     const { bem, base } = useBem('ms-button');
 
@@ -23,6 +24,7 @@ export function Button({
                 'ms-button--rounded': rounded,
                 'ms-button--accent': accent,
             })}
+            {...props}
         >
             {children}
         </button>

@@ -1,13 +1,17 @@
-import { ReactNode } from 'react';
+import { LabelHTMLAttributes, ReactNode } from 'react';
 import { useBem } from '@musica-sacra/hooks';
 
-type LabelProps = {
+type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
     children: ReactNode;
     className?: string;
 };
 
-export function Label({ children, className = '' }: LabelProps) {
+export function Label({ children, className = '', ...props }: LabelProps) {
     const { bem, base } = useBem('ms-label');
 
-    return <label className={bem(base, className)}>{children}</label>;
+    return (
+        <label className={bem(base, className)} {...props}>
+            {children}
+        </label>
+    );
 }
