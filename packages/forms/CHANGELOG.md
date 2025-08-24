@@ -1,5 +1,14 @@
 # @musica-sacra/forms
 
+## 1.0.2
+
+### Patch Changes
+
+- 0812a17: Fix classnames
+  - **What** Fix classnames
+  - **Why** Classnames had mistakes
+  - **How** Nothing.
+
 ## 1.0.1
 
 ### Patch Changes
