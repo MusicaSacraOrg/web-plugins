@@ -1,6 +1,6 @@
 {
   "name": "@musica-sacra/forms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utilities and components for building forms in musica-sacra apps",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
