@@ -1,6 +1,6 @@
 {
   "name": "@musica-sacra/layout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Layout components for building easy web apps layouts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
