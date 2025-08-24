@@ -1,5 +1,11 @@
 # @musica-sacra/forms
 
+## 1.0.4
+
+### Patch Changes
+
+- 0dd4c96: Fix styles
+
 ## 1.0.3
 
 ### Patch Changes
