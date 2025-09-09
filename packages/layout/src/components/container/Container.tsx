@@ -2,13 +2,13 @@ import React from 'react';
 import { useBem } from '@musica-sacra/hooks';
 
 export type ContainerProps = {
-    classname?: string;
+    className?: string;
     children?: React.ReactNode;
     isPageContainer?: boolean;
 };
 
 export function Container({
-    classname = '',
+    className = '',
     children,
     isPageContainer = false,
 }: ContainerProps) {
@@ -17,7 +17,7 @@ export function Container({
     return (
         <div
             className={bem(base, {
-                [classname]: true,
+                [className]: true,
                 'ms-container--page-container': isPageContainer,
             })}
         >
