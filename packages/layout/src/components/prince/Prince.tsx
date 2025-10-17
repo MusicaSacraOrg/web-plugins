@@ -1,19 +1,19 @@
 import { Container } from '../container/Container';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { useBem } from '@musica-sacra/hooks';
 
-type LayoutBasicProps = {
-    children?: React.ReactNode;
+type PrinceProps = {
+    children?: ReactNode;
     className?: string;
     isPageLayout?: boolean;
 };
 
-export function LayoutBasic({
+export function Prince({
     children,
     className = '',
     isPageLayout = false,
-}: LayoutBasicProps) {
-    const { bem, base } = useBem('ms-layout-basic');
+}: PrinceProps) {
+    const { bem, base } = useBem('ms-prince');
 
     return (
         <div className={bem(base, className)}>

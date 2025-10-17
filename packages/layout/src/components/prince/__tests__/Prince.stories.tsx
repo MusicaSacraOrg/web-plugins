@@ -1,12 +1,12 @@
 import React from 'react';
-import { LayoutBasic } from '@musica-sacra/layout';
 import type { StoryObj } from '@storybook/react';
+import { Prince } from '../Prince';
 
 const meta = {
-    title: '@musica-sacra/Layout/components/LayoutBasic',
-    component: LayoutBasic,
+    title: '@musica-sacra/Layout/components/Prince',
+    component: Prince,
     args: {
-        children: <p>LayoutBasic content</p>,
+        children: <p>Prince layout content</p>,
     },
 };
 

@@ -12,7 +12,7 @@ This package provides the following React layout components:
 
 - `Container`: Styled wrapper. 
 - `LayoutBasic`: Single column layout utilizing previously mentioned Container as main wrapper.
-- `LayoutWithSidebar`: Double column layout with main content and left sidebar. 
+- `Queen`: Double column layout with main content and left sidebar. 
 
 ## \<Container />
 
@@ -46,20 +46,20 @@ export function ExampleComponent() {
 }
 ```
 
-## \<LayoutWithSidebar />
+## \<Queen />
 
 Double column layout with main content and sidebar on the left side. 
 
 ```jsx
-import { LayoutWithSidebar } from '@musica-sacra/layout'
+import { Queen } from '@musica-sacra/layout'
 
 export function ExampleComponent() {
     return (
-        <LayoutWithSidebar
+        <Queen
             sidebar={<div>{/* Your Sidebar Content*/}</div>}
         >
             {/* Your Main Content */}
-        </LayoutWithSidebar>
+        </Queen>
     )
 }
 ```

@@ -1,5 +1,5 @@
-.ms-layout-with-sidebar {
-    $max-width: 1200px;
+.ms-queen {
+    $max-width: 1280px;
 
     $sidebar-ratio: 1;
     $content-ratio: 3;
@@ -20,44 +20,6 @@
     }
 
     &__ {
-        &overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: -1;
-
-            &--active {
-                opacity: 1;
-                z-index: 9;
-            }
-        }
-
-        &sidebar-expand {
-            display: none;
-            width: 100%;
-            padding: 1rem;
-            background-color: rgb(246, 246, 247); // TODO delete
-
-            @media (max-width: $max-width) {
-                display: block;
-            }
-
-            button {
-                background-color: transparent;
-                outline: none;
-                border: none;
-                color: rgba(60, 60, 67, 1);
-
-                &:hover {
-                    cursor: pointer;
-                    color: rgba(8, 130, 170, 1); // TODO delete
-                }
-            }
-        }
-
         &sidebar {
             width: calc((100% - ($max-width - 64px)) / 2 + $sidebar-min-width - 32px);
             min-width: $sidebar-min-width;
@@ -127,7 +89,7 @@
             margin-left: auto;
             padding: 1rem;
 
-            @media(max-width: 1200px) {
+            @media (max-width: $max-width) {
                 width: 100%;
                 padding: 0 1rem;
             }
@@ -142,17 +104,17 @@
                 width: 100%;
                 min-width: auto;
             }
+        }
 
-            &-inner {
-                width: $content-min-width;
-                margin-left: 0;
-                margin-right: auto;
-                padding: 1rem;
+        &content-inner {
+            width: $content-min-width;
+            margin-left: 0;
+            margin-right: auto;
+            padding: 1rem;
 
-                @media (max-width: $max-width) {
-                    width: 100%;
-                    padding: 2rem;
-                }
+            @media (max-width: $max-width) {
+                width: 100%;
+                padding: 2rem;
             }
         }
     }
@@ -160,6 +122,26 @@
     &-- {
         &page-layout {
             min-height: 100vh;
+        }
+
+        &full-width {
+            .ms-queen__content {
+                width: 100%;
+            }
+
+            .ms-queen__content-inner {
+                width: 100%;
+                padding: 1rem 2rem;
+            }
+
+            .ms-queen__sidebar {
+                width: 400px;
+                max-width: 100%;
+            }
+
+            .ms-queen__sidebar-content {
+                width: 100%;
+            }
         }
     }
 }

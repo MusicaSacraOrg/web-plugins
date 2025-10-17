@@ -1,0 +1,22 @@
+.ms-sidebar-expand-button {
+    display: none;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(246, 246, 247);
+
+    @media (max-width: 1280px) {
+        display: block;
+    }
+
+    button {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: rgba(60, 60, 67, 1);
+
+        &:hover {
+            cursor: pointer;
+            color: rgba(8, 130, 170, 1);
+        }
+    }
+}
