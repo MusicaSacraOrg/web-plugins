@@ -2,6 +2,7 @@ import { ReactNode, useState } from 'react';
 import { useBem } from '@musica-sacra/hooks';
 import { SidebarExpandButton } from '../sidebarExpandButton/SidebarExpandButton';
 import { Overlay } from '../overlay/Overlay';
+import { SidebarContext } from '../../context/SidebarContext';
 
 type KingProps = {
     className?: string;
@@ -67,19 +68,24 @@ export function King({
                         </svg>
                     </button>
                 </div>
-                <div className={bem('sidebar-content')}>
-                    {leftSidebar}
-                    {mergeSidebarsWhenResponsive && (
-                        <div className={bem('sidebar--merged')}>
-                            <div className={bem('hr')} />
-                            {rightSidebar}
-                        </div>
-                    )}
-                </div>
+
+                <SidebarContext.Provider value={{ closeSidebar }}>
+                    <div className={bem('sidebar-content')}>
+                        {leftSidebar}
+                        {mergeSidebarsWhenResponsive && (
+                            <div className={bem('sidebar--merged')}>
+                                <div className={bem('hr')} />
+                                {rightSidebar}
+                            </div>
+                        )}
+                    </div>
+                </SidebarContext.Provider>
             </div>
+
             <div className={bem('content')}>
                 <div className={bem('content-inner')}>{children}</div>
             </div>
+
             <div className={bem({ sidebar: true, 'sidebar--right': true })}>
                 <div className={bem('sidebar-content')}>{rightSidebar}</div>
             </div>
