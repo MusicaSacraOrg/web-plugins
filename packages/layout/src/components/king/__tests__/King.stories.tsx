@@ -16,3 +16,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const PageLayout: Story = {
+    args: {
+        isPageLayout: true,
+    },
+};
+
+export const MergedSidebars: Story = {
+    args: {
+        mergeSidebarsWhenResponsive: true,
+    },
+};
