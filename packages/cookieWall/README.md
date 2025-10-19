@@ -1,25 +1,10 @@
-# @musica-sacra/dummy
+# @musica-sacra/cookie-wall
 
-Just a dummy react component
+A lightweight and customizable React component for displaying a cookie consent wall that helps you manage user privacy preferences in compliance with GDPR and similar regulations.
 
 ## Installation
 
-`npm install @musica-sacra/dummy`
+`npm install @musica-sacra/cookie-wall`
 
 ## Basic Usage
 
-```jsx
-// Any of your component file, e.g. AppComponent.tsx
-
-import { Dummy } from '@musica-sacra/dummy'
-
-function AppComponent() {
-    //...
-    
-    return (
-        <div>
-            <Dummy dummyText={'Here we go again!'} />
-        </div>
-    )
-}
-```
