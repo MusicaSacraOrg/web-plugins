@@ -4,8 +4,8 @@
 
 ### Minor Changes
 
-- 50e606b: Renamed prop `classname` to `className` in Container.tsx and LayoutBasic.tsx
-  - **What** Renamed prop `classname` to `className` in Container.tsx and LayoutBasic.tsx
+- 50e606b: Renamed prop `classname` to `className` in Container.tsx and Prince.tsx
+  - **What** Renamed prop `classname` to `className` in Container.tsx and Prince.tsx
   - **Why** Matches React convention, improves consistency.
   - **How** Rename `classname` prop to `className` in `Container` and `LayoutBasic`.
     Update your code by replacing all `classname` props with `className`.

@@ -1,8 +1,9 @@
 import { Container } from './components/container/Container';
 
-import { LayoutBasic } from './components/layoutBasic/LayoutBasic';
-import { LayoutWithSidebar } from './components/layoutWithSidebar/LayoutWithSidebar';
+import { King } from './components/king/King';
+import { Queen } from './components/queen/Queen';
+import { Prince } from './components/prince/Prince';
 
-export { Container, LayoutBasic, LayoutWithSidebar };
+export { Container, King, Queen, Prince };
 
 export { useSidebar } from './context/SidebarContext';

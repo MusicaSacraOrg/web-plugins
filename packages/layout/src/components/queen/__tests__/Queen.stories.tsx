@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { LayoutWithSidebar } from '@musica-sacra/layout';
+import { Queen } from '../Queen';
 
 const DummyContent = () => (
     <div>
@@ -38,9 +38,9 @@ const DummyContent = () => (
     </div>
 );
 
-const meta: Meta<typeof LayoutWithSidebar> = {
-    title: '@musica-sacra/Layout/components/LayoutWithSidebar',
-    component: LayoutWithSidebar,
+const meta: Meta<typeof Queen> = {
+    title: '@musica-sacra/Layout/components/Queen',
+    component: Queen,
 
     argTypes: {
         className: {
@@ -57,9 +57,9 @@ type Story = StoryObj<typeof meta>;
 
 const Template: Story = {
     render: (args) => (
-        <LayoutWithSidebar {...args} sidebar={<div></div>}>
+        <Queen {...args} sidebar={<div></div>}>
             <DummyContent />
-        </LayoutWithSidebar>
+        </Queen>
     ),
 };
 
@@ -69,7 +69,7 @@ export const Default: Story = {
 
 export const MixedContentLength: Story = {
     render: (args) => (
-        <LayoutWithSidebar
+        <Queen
             {...args}
             sidebar={
                 <div style={{}}>
@@ -104,9 +104,54 @@ export const MixedContentLength: Story = {
             }
         >
             <DummyContent />
-        </LayoutWithSidebar>
+        </Queen>
     ),
     args: {
         isPageLayout: true,
+    },
+};
+
+export const FullWidth: Story = {
+    render: (args) => (
+        <Queen
+            {...args}
+            sidebar={
+                <div style={{}}>
+                    <h4>Long sidebar</h4>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                    <p>Len pár položiek.</p>
+                </div>
+            }
+        >
+            <DummyContent />
+        </Queen>
+    ),
+    args: {
+        isPageLayout: true,
+        fullWidth: true,
     },
 };
