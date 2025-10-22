@@ -8,8 +8,8 @@ type CookieWallProps = {
 };
 
 export function CookieWall({ className = '' }: CookieWallProps) {
-    const { acceptCookiesConsent, rejectCookiesConsent, isCookiesConsentSet} = useCookiesConsent();
-    if (isCookiesConsentSet()) {
+    const { cookieConsent, acceptCookiesConsent, rejectCookiesConsent } = useCookiesConsent();
+    if (cookieConsent !== undefined) {
         return null;
     }
 
