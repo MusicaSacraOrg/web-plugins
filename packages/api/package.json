@@ -1,0 +1,46 @@
+{
+  "name": "@musica-sacra/api",
+  "version": "0.0.0",
+  "description": "Api service helpers and hooks",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "clean": "rm -rf dist"
+  },
+  "author": "Samuel Slávik",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "musica-sacra",
+    "musica",
+    "sacra",
+    "api"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.2",
+    "axios": "^1.11.0",
+    "@musica-sacra/notifications": "^1.0.1",
+    "@tanstack/react-query": "^5.89.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "axios": "^1.11.0",
+    "@musica-sacra/notifications": "^1.0.1",
+    "@tanstack/react-query": "^5.89.0"
+  }
+}

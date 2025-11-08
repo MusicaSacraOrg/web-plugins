@@ -42,6 +42,8 @@ export default defineConfig([
         rules: {
             'arrow-body-style': 'off',
             'react/react-in-jsx-scope': 'off',
+            '@typescript-eslint/no-require-imports': 'off',
+            '@typescript-eslint/no-explicit-any': 'warn',
         },
     },
 ]);
