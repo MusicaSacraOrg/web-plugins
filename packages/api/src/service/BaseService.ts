@@ -7,7 +7,7 @@ export class BaseService<
     T = any,
     R = Record<string, any>,
 > extends AbstractService {
-    async getList(url: string, params?: Record<string, any>) {
+    async getList(url: string, params?: Record<string, string>) {
         return await axios.get<WithItems<T, R>>(url, {
             params,
             ...this.getHeaders(),

@@ -9,7 +9,7 @@ import { BaseService } from '../service/BaseService';
 export function useGetList<T = any>(
     url: string,
     key: string,
-    params?: Record<string, any>
+    params?: Record<string, string>
 ) {
     const { addNotification } = useContext(NotificationsContext);
 
